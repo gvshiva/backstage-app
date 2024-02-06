@@ -1,24 +1,24 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: my-api
-  description: My existing API component
+  name: cat-fact-api
+  description: Retrieve cat facts
 spec:
   type: openapi
   lifecycle: production
-  owner: guests
-  system: sample-api
+  owner: fact-team
+  system: fact-portal
   definition: |
-  openapi: "3.0.0"
-  info:
-    version: 1.0.0
-    title: Sample API
-    license:
-      name: MIT
-  servers:
-    - url: https://crudcrud.com/api/19188936f5274a9da25de6634279ec6a
-  paths:
-    /users:
-      get:
-        summary: Retrieve list of users
-  ...
+    openapi: "3.0.0"
+    info:
+      version: 1.0.0
+      title: Fact API
+      license:
+        name: MIT
+    servers:
+      - url: https://catfact.ninja/fact
+    paths:
+      /fact:
+        get:
+          summary: List all facts
+    ...
