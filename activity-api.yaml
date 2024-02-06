@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: activity-api
+  description: Retrieve artist details
+spec:
+  type: openapi
+  lifecycle: production
+  owner: activity-team
+  system: activity-portal
+  definition: |
+    openapi: "3.0.0"
+    info:
+      version: 1.0.0
+      title: Activity API
+      license:
+        name: MIT
+    servers:
+      - url: https://www.boredapi.com/api
+    paths:
+      /activity:
+        get:
+          summary: activity
+    ...
