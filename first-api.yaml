@@ -3,28 +3,36 @@ kind: API
 metadata:
   name: my-api
   description: My existing API component
-  owner: guests
-  version: v1
 spec:
   type: openapi
-  lifecycle: experimental
-  # visibility: public
-  baseUrl: https://crudcrud.com/api/19188936f5274a9da25de6634279ec6a
-  endpoints:
-    - path: /users
-      method: GET
-      description: Retrieve list of users
-    # - path: /users/{id}
-    #   method: GET
-    #   description: Retrieve user by ID
-    # - path: /users/{id}
-    #   method: POST
-    #   description: Create a new user
-    #   payload: '{"name": "John Doe", "email": "john@example.com"}'
-    # - path: /users/{id}
-    #   method: UPDATE
-    #   description: Update an existing user
-    #   payload: '{"name": "John Doe", "email": "john@example.com"}'
-    # - path: /users/{id}
-    #   method: DELETE
-    #   description: Delete a user
+  lifecycle: production
+  owner: guests
+  system: sample-api
+  definition: |
+  openapi: "3.0.0"
+  info:
+    version: 1.0.0
+    title: Sample API
+    license:
+      name: MIT
+  servers:
+    - url: https://crudcrud.com/api/19188936f5274a9da25de6634279ec6a
+  paths:
+    /users:
+      get:
+        summary: Retrieve list of users
+  ...
+  # - path: /users/{id}
+  #   method: GET
+  #   description: Retrieve user by ID
+  # - path: /users/{id}
+  #   method: POST
+  #   description: Create a new user
+  #   payload: '{"name": "John Doe", "email": "john@example.com"}'
+  # - path: /users/{id}
+  #   method: UPDATE
+  #   description: Update an existing user
+  #   payload: '{"name": "John Doe", "email": "john@example.com"}'
+  # - path: /users/{id}
+  #   method: DELETE
+  #   description: Delete a user
