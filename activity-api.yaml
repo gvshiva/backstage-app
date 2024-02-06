@@ -17,6 +17,12 @@ spec:
         name: MIT
     servers:
       - url: https://www.boredapi.com/api
+        description: Main API server
+      - url: http://proxy.rockwellcollins.com:9090
+        description: Internal proxy server
+        variables:
+          proxyUrl:
+            default: "https://www.boredapi.com/api"
     paths:
       /activity:
         get:
@@ -28,8 +34,6 @@ spec:
                 application/json:
                   schema:
                     type: object
-                    items:
-                      $ref: '#/components/schemas/activity'
               examples:
                 activity:
                   value:
