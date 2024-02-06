@@ -6,7 +6,7 @@ metadata:
   owner: guests
   version: v1
 spec:
-  type: http
+  type: openapi
   lifecycle: experimental
   # visibility: public
   baseUrl: https://crudcrud.com/api/19188936f5274a9da25de6634279ec6a
