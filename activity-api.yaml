@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: activity-api
+  name: activity-api-1
   description: Retrieve artist details
 spec:
   type: openapi
@@ -21,4 +21,20 @@ spec:
       /activity:
         get:
           summary: activity
+          responses:
+            '200':
+              description: Successful response
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    items:
+                      $ref: '#/components/schemas/activity'
+              examples:
+                activity:
+                  value:
+                    - participants: 1
+                      key: 2055368
+                      type: charity
+                      activity: social-service
     ...
