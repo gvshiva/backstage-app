@@ -28,8 +28,6 @@ spec:
                 application/json:
                   schema:
                     type: object
-                    items:
-                      $ref: '#/components/schemas/activity'
               examples:
                 activity:
                   value:
